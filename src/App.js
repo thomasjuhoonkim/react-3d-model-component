@@ -1,6 +1,6 @@
 import ModelViewer from "./components/ModelViewer/ModelViewer";
 
-import benchy from "./assets/benchy.stl";
+import yoshi from "./assets/yoshi.stl";
 
 import "./App.css";
 
@@ -12,14 +12,14 @@ function App() {
         <ModelViewer
           height="500px"
           width="80vw"
-          object={benchy}
-          color="red"
-          backgroundColor="gray"
+          object={yoshi}
+          color="lightgreen"
+          backgroundColor="lightgray"
           initObjectRotation={[-Math.PI / 2, 0, 0]}
-          cameraPosition={[100, 50, 100]}
+          cameraPosition={[150, 50, 150]}
           fov={30}
           rotate={true}
-          returnCamera={true}
+          returnCamera={false}
           rotationSpeeds={[0, 0, 0.005]}
           pointLights={[[100, 100, 100]]}
           directionalLights={[]}

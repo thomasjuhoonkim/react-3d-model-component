@@ -1,5 +1,6 @@
 import React, { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
+// import { AxesHelper } from "three";
 
 import Loader from "./Loader";
 import CameraController from "./CameraController";
@@ -12,7 +13,7 @@ const ModelViewer = ({
   object,
   backgroundColor = "gray",
   color = "orange",
-  initObjectRotation = [0, 0, 0],
+  initObjectRotation = [-Math.PI / 2, 0, 0],
   cameraPosition = [100, 100, 100],
   fov = 30,
   rotate = false,
@@ -34,6 +35,7 @@ const ModelViewer = ({
       camera={{ position: cameraPosition, fov: fov }}
     >
       <Suspense fallback={<Loader />}>
+        {/* <primitive object={new AxesHelper(100)} /> */}
         <Model
           selected={selected}
           object={object}

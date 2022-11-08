@@ -18,6 +18,9 @@ const Model = ({
   geometry.computeBoundingBox();
   const center = new Vector3();
   geometry.boundingBox.getCenter(center);
+  // console.log(geometry);
+  // console.log(geometry.boundingBox);
+  // console.log(center);
 
   // rotate object if rotateCamera is true
   useFrame(() => {
@@ -32,7 +35,8 @@ const Model = ({
     <>
       <mesh
         ref={ref}
-        position={[-center.x, -center.z, -center.y]} // z and y coordinates are swapped
+        // position={[-center.x, -center.y, -center.z]} // z and y coordinates are swapped
+        position={[0, -center.z, 0]}
         rotation={initObjectRotation}
       >
         <primitive attach="geometry" object={geometry} />
