@@ -4,7 +4,7 @@
 
 A react component to view a single 3D model in STL format using three.js.
 
-### [Check it out here!](https://react-3d-model-component.web.app/)
+### [Check it out here!](https://react-3d-model-component.firebaseapp.com/)
 
 ## Features
 
