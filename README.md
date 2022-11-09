@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# react-3d-model-component
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![](https://img.shields.io/npm/v/react-3d-model-component.svg)](https://www.npmjs.com/package/react-3d-model-component)
 
-## Available Scripts
+A react component to view a single 3D model in STL format using three.js.
 
-In the project directory, you can run:
+### [Check it out here!](https://www.thomasjuhoonkim.me)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The 3D model viewer has a lot of configurations!
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Unlimited point lights and directional lights
+- Full camera positioning customization
+- Built-in object inspector
+- Built-in auto-rotation
+- Single React component
 
-### `npm test`
+## Usage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Install `react-3d-model-component` through npm
 
-### `npm run build`
+```bash
+npm i react-3d-model-component
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Use `ModelViewer` component
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+import ModelViewer from "react-3d-model-component";
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Properties
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+| Property              | Type                | Default              | Description                                                                        |
+| :-------------------- | :------------------ | :------------------- | :--------------------------------------------------------------------------------- |
+| url                   | string              | none                 | The url of the STL file, can also be a URL object                                  |
+| width                 | string              | "1000px"             | The width of the canvas                                                            |
+| height                | string              | "500px"              | The height of the canvas                                                           |
+| backgroundColor       | string              | "lightgray"          | The canvas color                                                                   |
+| color                 | string              | "lightblue"          | The object color                                                                   |
+| objectPosition        | integer array       | [0, 0, 0]            | The position of the object [x, y, z]                                               |
+| initObjectRotation    | integer array       | [-MATH.pi / 2, 0, 0] | The initial rotation of the object                                                 |
+| rotate                | boolean             | true                 | Object auto-rotation                                                               |
+| rotationSpeeds        | integer array       | [0, 0, 0.005]        | Object auto-rotation speeds [x, y, z]                                              |
+| cameraPosition        | array               | [100, 100, 100]      | Camera position                                                                    |
+| fov                   | integer             | 30                   | Field of view                                                                      |
+| returnCamera          | boolean             | true                 | Return camera on orbit controls camera movement                                    |
+| pointLights           | integer array array | [[100, 100, 100]]    | Array of arrays where each sub-array is the coordinates for the point lights       |
+| directionalLights     | integer array array | []                   | Array of arrays where each sub-array is the coordinates for the directional lights |
+| ambientLightIntensity | float               | 0.3                  | Intensity of ambient light                                                         |
+| axes                  | boolean             | false                | Show threejs AxesHelper                                                            |

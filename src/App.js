@@ -1,6 +1,6 @@
 import ModelViewer from "./components/ModelViewer/ModelViewer";
 
-import yoshi from "./assets/yoshi.stl";
+import benchy from "./assets/benchy.stl";
 
 import "./App.css";
 
@@ -12,20 +12,27 @@ function App() {
         <ModelViewer
           height="500px"
           width="80vw"
-          object={yoshi}
-          color="lightgreen"
+          object={benchy}
+          color="lightblue"
           backgroundColor="lightgray"
+          objectPosition={[0, -20, 0]}
           initObjectRotation={[-Math.PI / 2, 0, 0]}
-          cameraPosition={[150, 50, 150]}
-          fov={30}
-          rotate={true}
-          returnCamera={false}
+          rotate={false}
           rotationSpeeds={[0, 0, 0.005]}
+          cameraPosition={[75, 25, 75]}
+          fov={50}
+          returnCamera={false}
           pointLights={[[100, 100, 100]]}
           directionalLights={[]}
-          ambientLightIntensity={0.3}
+          ambientLightIntensity={0.5}
+          axes={false}
         />
       </div>
+      <footer>
+        <p>
+          Made by <a href="https://github.com/thomasjuhoonkim">Thomas Kim</a>
+        </p>
+      </footer>
     </div>
   );
 }

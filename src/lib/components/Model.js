@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { STLLoader } from "three/examples/jsm/loaders/STLLoader";
 import { useLoader, useFrame } from "@react-three/fiber";
 import { Vector3 } from "three";
+import { AxesHelper } from "three";
 
 const Model = ({
   selected,
@@ -11,6 +12,8 @@ const Model = ({
   rotationSpeeds,
   initObjectRotation,
   objectPosition,
+  cameraPosition,
+  axes,
 }) => {
   const ref = useRef();
   const geometry = useLoader(STLLoader, object);
@@ -42,6 +45,7 @@ const Model = ({
         rotation={initObjectRotation}
       >
         <primitive attach="geometry" object={geometry} />
+        {axes ? <primitive object={new AxesHelper(cameraPosition[1])} /> : null}
         <meshStandardMaterial attach="material" color={color} />
       </mesh>
     </>
