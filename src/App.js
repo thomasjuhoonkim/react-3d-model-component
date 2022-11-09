@@ -8,6 +8,10 @@ function App() {
   return (
     <div className="app">
       <h1>React 3D Model Component</h1>
+      <p>
+        A react component to view a single 3D model in STL format using
+        three.js.
+      </p>
       <div className="container">
         <ModelViewer
           height="500px"
