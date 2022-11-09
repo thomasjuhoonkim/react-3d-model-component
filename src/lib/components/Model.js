@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { STLLoader } from "three/examples/jsm/loaders/STLLoader";
 import { useLoader, useFrame } from "@react-three/fiber";
 import { Vector3 } from "three";

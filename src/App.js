@@ -1,4 +1,5 @@
-import ModelViewer from "./components/ModelViewer/ModelViewer";
+// import ModelViewer from "react-3d-model-component";
+import ModelViewer from "./lib/index";
 
 import benchy from "./assets/benchy.stl";
 
