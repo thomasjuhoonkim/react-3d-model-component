@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import { STLLoader } from "three/examples/jsm/loaders/STLLoader";
 import { useLoader, useFrame } from "@react-three/fiber";
-import { Vector3 } from "three";
 import { AxesHelper } from "three";
 
 const Model = ({
@@ -17,14 +16,6 @@ const Model = ({
 }) => {
   const ref = useRef();
   const geometry = useLoader(STLLoader, object);
-
-  // get center coordinates of object
-  geometry.computeBoundingBox();
-  const center = new Vector3();
-  geometry.boundingBox.getCenter(center);
-  // console.log(geometry);
-  // console.log(geometry.boundingBox);
-  // console.log(center);
 
   // rotate object if rotateCamera is true
   useFrame(() => {
